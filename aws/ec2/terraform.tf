@@ -2,20 +2,15 @@ terraform {
   backend "remote"{
     organization="ghanatava"
     workspaces{
-      name = "example_s3"
+      name="example"
     }
   }
   required_providers {
-    random = {
-      source  = "hashicorp/random"
-      version = "3.1.0"
-    }
-
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 2.0.0"
+      version = "~>4.16"
     }
   }
 
-  required_version = ">= 1.1"
+  required_version = ">1.2.0"
 }
